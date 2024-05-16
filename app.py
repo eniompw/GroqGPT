@@ -3,6 +3,10 @@ import requests
 import os
 app = Flask(__name__)
 
+@app.route('/debug')
+def debug():
+	return str(os.environ.get("GROQ_API_KEY"))[50:]
+
 @app.route('/')
 def home():
 	return render_template('index.html')
