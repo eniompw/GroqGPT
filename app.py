@@ -20,7 +20,7 @@ def query():
 	# Query
 	q = request.form['q']
 	# Add HTML formatting
-	html = "\n and format your answers nicely using HTML and not Markdown."
+	html = "\n Answer the question and format your answers nicely using HTML and not Markdown. Don't mention HTML."
 	# Prepare the data to be sent (can be JSON, string, etc.)
 	messages = [{"role": "user", "content": q + html}]
 	data = {"messages": messages, "model": "llama3-70b-8192"}
