@@ -1,4 +1,4 @@
-# Vercel Groq
+# LLM on Vercel and Groq
 
 Super Simple ChatGPT Clone
 
