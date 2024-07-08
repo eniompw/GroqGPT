@@ -11,8 +11,9 @@ def home():
 
 @app.route('/query')
 def query():
+	q = request.args.get('q') + " (use HTML to nicely format the response)"
 	chat_completion = groq_client.chat.completions.create(
-		messages=[{"role": "user", "content": request.args.get('q')}],
+		messages=[{"role": "user", "content": q}],
 		model="gemma2-9b-it",
 	)
 	return chat_completion.choices[0].message.content
