@@ -14,7 +14,7 @@ def query():
 	q = request.args.get('q') + " (use HTML to nicely format the response)"
 	chat_completion = groq_client.chat.completions.create(
 		messages=[{"role": "user", "content": q}],
-		model="gemma2-9b-it",
+		model="openai/gpt-oss-120b",
 	)
 	return chat_completion.choices[0].message.content
 
